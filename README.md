@@ -44,7 +44,7 @@ map <C-Z> u
 cnoremap <c-n> <CR>n/<c-p>
 nnoremap <silent> <C-R> <Cmd>redo<CR>
 nnoremap <silent> <C-O> <Cmd>CocCommand clangd.switchSourceHeader<CR>
-nnoremap <silent> <C-M> <Cmd>! make<CR>
+nnoremap <silent> <C-M> <Cmd>!make<CR>
 nnoremap <silent> <C-S> <Cmd>w<CR>
 nnoremap <silent> <C-Q> <Cmd>q<CR>
 nnoremap <silent> <C-E> <Cmd>Explore<CR>
