@@ -28,7 +28,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " & https://github.com/clangd/co
 Plug 'sbdchd/neoformat'
 Plug 'fenetikm/falcon'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ej-shafran/compile-mode.nvim'
 Plug 'p00f/clangd_extensions.nvim'
 
 call plug#end()
