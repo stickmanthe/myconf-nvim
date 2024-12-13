@@ -13,7 +13,7 @@ set ignorecase
 set ai
 set cursorline
 set ttyfast
-set termguicolors
+" set termguicolors
 set noswapfile
 
 call plug#begin()
@@ -35,10 +35,13 @@ call plug#end()
 
 colorscheme falcon
 
+autocmd BufNew,BufRead *.asm set ft=nasm
+
 map <C-C> "+y
 map <C-S-c> "+yy
 map <C-V> "+p
 map <C-Z> u
+cnoremap <c-n> <CR>n/<c-p>
 nnoremap <silent> <C-R> <Cmd>redo<CR>
 nnoremap <silent> <C-O> <Cmd>CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent> <C-M> <Cmd>! make<CR>
@@ -46,10 +49,18 @@ nnoremap <silent> <C-S> <Cmd>w<CR>
 nnoremap <silent> <C-Q> <Cmd>q<CR>
 nnoremap <silent> <C-E> <Cmd>Explore<CR>
 
+" replace text
+nnoremap <C-Y> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Coc-nvim TAB to accept autocomplete
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
+
 lua require'lspconfig'.clangd.setup{}
+" lua require'clangd_extensions'.setup{}
+" lua require'clangd_extensions.inlay_hints'.setup_autocmd()
+" lua require'clangd_extensions.inlay_hints'.set_inlay_hints()
+
 
 ```
