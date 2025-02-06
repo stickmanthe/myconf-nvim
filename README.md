@@ -1,4 +1,6 @@
-new  for linux mx
+above is old and for windows
+
+this is the new config on linux:
 
 ```
 syntax on
@@ -16,6 +18,8 @@ set ttyfast
 " set termguicolors
 set noswapfile
 
+set keymodel=startsel,stopsel
+
 call plug#begin()
 
 Plug 'neovim/nvim-lspconfig'
@@ -29,12 +33,12 @@ Plug 'sbdchd/neoformat'
 Plug 'fenetikm/falcon'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'p00f/clangd_extensions.nvim'
-
 call plug#end()
 
 colorscheme falcon
 
 autocmd BufNew,BufRead *.asm set ft=nasm
+" autocmd FileType markdown setlocal colorcolumn=144
 
 map <C-C> "+y
 map <C-S-c> "+yy
@@ -56,10 +60,12 @@ inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
 
-lua require'lspconfig'.clangd.setup{}
+" АВТОПРОВЕРКА НА ОШИБКИ
+" lua require'lspconfig'.clangd.setup{}
+
+
 " lua require'clangd_extensions'.setup{}
 " lua require'clangd_extensions.inlay_hints'.setup_autocmd()
 " lua require'clangd_extensions.inlay_hints'.set_inlay_hints()
-
 
 ```
